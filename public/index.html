@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terabox File Explorer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-cloud"></i> Terabox File Explorer</h1>
+            
+            <div class="controls">
+                <input type="text" id="pathInput" placeholder="パスを入力" value="">
+                <button class="btn btn-primary" onclick="loadFiles()">
+                    <i class="fas fa-sync"></i> 更新
+                </button>
+                <button class="btn btn-success" onclick="goToRoot()">
+                    <i class="fas fa-home"></i> ルートへ
+                </button>
+            </div>
+            
+            <div class="breadcrumb" id="breadcrumb">
+                <!-- パンくずリストがここに表示されます -->
+            </div>
+        </div>
+        
+        <div class="file-explorer">
+            <div id="fileList">
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>ファイルを読み込み中...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // グローバル関数として定義
+        async function loadFiles() {
+            if (window.explorer) {
+                await window.explorer.loadFiles();
+            }
+        }
+        
+        async function goToRoot() {
+            if (window.explorer) {
+                window.explorer.goToRoot();
+            }
+        }
+    </script>
+    <script src="js/main.js"></script>
+</body>
+</html>
