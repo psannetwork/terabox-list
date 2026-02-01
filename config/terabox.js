@@ -37,3 +37,4 @@ const uploader = new TeraboxUploader(credentials);
 
 module.exports = uploader;
 module.exports.BASE_PATH = BASE_PATH;
+module.exports.bdstoken = credentials.bdstoken;
