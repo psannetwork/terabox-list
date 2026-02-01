@@ -240,6 +240,7 @@ router.get('/files', async (req, res) => {
   }
 });
 
+// ダウンロード処理（ストリーミング転送）
 router.get('/download/:fsId', async (req, res) => {
   const fsId = req.params.fsId;
 

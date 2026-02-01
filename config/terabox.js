@@ -16,7 +16,9 @@ const credentials = {
   uploadId: process.env.UPLOAD_ID,
   jsToken: process.env.JS_TOKEN,
   browserId: process.env.BROWSER_ID,
-  bdstoken: process.env.BDSTOKEN
+  bdstoken: process.env.BDSTOKEN,
+  ndut_fmt: process.env.NDUT_FMT,
+  ndut_fmv: process.env.NDUT_FMV
 };
 
 // 認証情報の検証

@@ -7,6 +7,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // セキュリティ強化のミドルウェア
+app.set('trust proxy', 1); // プロキシを信頼
+
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15分
   max: 100 // 15分間に最大100回のリクエスト
